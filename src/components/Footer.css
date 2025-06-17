@@ -47,6 +47,7 @@
   font-size: 20px;
   cursor: pointer;
   transition: color 0.3s;
+  color: white ;
 }
 
 .footer-center .social-icon:hover {
@@ -70,7 +71,7 @@
     align-items: center;
     text-align: center;
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
   }
 
   .footer-left,
@@ -93,9 +94,12 @@
 @media (max-width: 480px) {
   .footer {
     font-size: 13px;
+    width:100%;
   }
 
   .footer-center .social-icon {
     font-size: 18px;
   }
 }
+
+

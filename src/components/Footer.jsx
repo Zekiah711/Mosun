@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import './Footer.css';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 import { MdCopyright } from 'react-icons/md';
 
 export default function Footer() {
@@ -12,14 +13,20 @@ export default function Footer() {
       </div>
 
       <div className="footer-center">
-        <FaFacebookF className="social-icon" />
-        <FaTwitter className="social-icon" />
-        <FaInstagram className="social-icon" />
+       <a href="mailto:yourmail@gmail.com" target="_blank" rel="noopener noreferrer">
+        <SiGmail className="social-icon" />
+      </a>
+      <a href="https://wa.me/2349042742781" target="_blank" rel="noopener noreferrer"> 
+        <FaWhatsapp className="social-icon" /> 
+      </a>
+       <a href="" target="_blank" rel="noopener noreferrer"> 
+         <FaTwitter className="social-icon" /> 
+      </a>
+
       </div>
 
       <div className="footer-right">
-        <a href="#">Help</a>
-        <a href="#">Careers</a>
+        <a href="">Help</a>
       </div>
     </footer>
   );

@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const targetDate = '2025-08-01T00:00:00';
+  const targetDate = '2025-06-20T00:00:00';
 
   return (
     <div className="app">
