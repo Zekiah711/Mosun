@@ -1,0 +1,239 @@
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 110px;
+  position: relative;
+  z-index: 0;
+}
+
+/* Top frosted countdown box */
+.frosted-box {
+  background: rgba(3, 79, 103, 0.193);
+  backdrop-filter: blur(10px);
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(6, 168, 209, 0.791);
+  width: 100%;
+  max-width: 900px;
+  margin-top: -5em;
+  z-index: 1;
+  position: relative;
+}
+
+.glow-image{
+   height: 6em;
+   width: 28rem;
+   filter: drop-shadow(0 0 7px rgba(0, 255, 255, 0.558));
+   transition: filter 0.5s ease;
+}
+
+.glow-image:hover {
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.809));
+}
+
+
+.event-title {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+/* Timer blocks */
+.time-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.time-block {
+  border: none;
+  padding: 40px 25px;
+  background: linear-gradient(90deg, rgba(11, 40, 50, 0.14), rgba(5, 131, 185, 0.397));
+  min-width: 100px;
+  box-shadow: 0 0 6px rgba(37, 191, 234, 0.402);
+  position: relative;
+  z-index: 1; /* Base layer */
+  transition:  0.5s ease-out; 
+}
+
+.time-block:hover{
+  transform: translateY(-5px) scale(1.02); /* Lift + slight zoom */
+  z-index: 10; /* Bring forward over other elements */
+  box-shadow: 0 0 6px rgba(1, 248, 174, 0.994);
+}
+
+
+.time-value {
+  font-size: 40px;
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+  font-weight: 600;
+}
+
+.time-label {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #ddd;
+  letter-spacing: 0.07em;
+}
+
+
+/* Bottom reminder card */
+.reminder-section {
+  background: rgba(3, 79, 103, 0.193);
+  backdrop-filter: blur(8px);
+  padding: 25px 35px;
+  width: 100%;
+  max-width: 700px;
+  margin-top: -9px; /* Overlap effect */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 0;
+  text-align: left;
+  gap: 30px;
+  flex-wrap: wrap; /* Responsive stacking on small screens */
+}
+
+.reminder-text {
+  font-size: 14px;
+  color: #ccc;
+  letter-spacing: 0.07em;
+  line-height: 1.6;
+  flex: 1 1 70%;
+  min-width: 240px;
+}
+
+.remind-button {
+  background: linear-gradient(90deg, rgba(11, 40, 50, 0.14), rgba(5, 131, 185, 0.397));
+  color: white;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  border-right: 1px solid rgba(255, 255, 255, 0.1); ;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  flex-shrink: 0;
+}
+
+.remind-button svg {
+  margin-right: 9px;
+  vertical-align: middle;
+  color: white;
+}
+.remind-button:hover {
+  background: #077acc5a;
+}
+
+
+@media (max-width: 768px) {
+  .frosted-box {
+    padding: 30px 20px;
+    margin-top: -6em;
+  }
+
+  .glow-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .event-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .time-wrapper {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .time-block {
+    min-width: 80px;
+    padding: 30px 18px;
+  }
+
+  .time-value {
+    font-size: 30px;
+  }
+
+  .time-label {
+    font-size: 12px;
+  }
+
+  .reminder-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: -.5em;
+  }
+
+  .reminder-text {
+    font-size: 13px;
+    flex: unset;
+    width: 100%;
+  }
+
+  .remind-button {
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-title {
+    font-size: 22px;
+  }
+
+  .time-value {
+    font-size: 24px;
+  }
+
+  .time-label {
+    font-size: 10px;
+  }
+
+  .remind-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .reminder-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .reminder-text {
+    font-size: 14px;
+    flex: unset;
+    width: 100%;
+  }
+
+  .remind-button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reminder-text {
+    font-size: 13px;
+  }
+
+  .remind-button {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}
