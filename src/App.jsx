@@ -1,22 +1,14 @@
-import Header from './components/Header';
-import Countdown from './components/Countdown';
-import Footer from './components/Footer';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage.jsx';
+import OtherProjects from './pages/OtherProjects'; // <-- Import the new page
 
-function App() {
-  const targetDate = '2025-06-20T00:00:00';
-
+export default function App() {
   return (
-    <div className="app">
-      <div className="background-overlay" />
-      <Header />
-      <div className="overlay">
-        <Countdown targetDate={targetDate} />
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/projects" element={<OtherProjects />} />
+      </Routes>
+    </Router>
   );
 }
-
-
-export default App;

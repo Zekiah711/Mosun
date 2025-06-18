@@ -1,9 +1,7 @@
-// src/components/Countdown.jsx
 import { useEffect, useState } from 'react';
 import './Countdown.css';
-import { FaBell } from 'react-icons/fa';
-import mosunLogo from '../assets/LOGO_2404STUDIOS_SOCIAL/mosun_logo.png'
-
+import { FaBell, FaSpinner } from 'react-icons/fa'; // FaSpinner for loading icon
+import mosunLogo from '../assets/LOGO_2404STUDIOS_SOCIAL/mosun_logo.png';
 
 export default function Countdown({ targetDate }) {
   const calculateTimeLeft = () => {
@@ -17,11 +15,43 @@ export default function Countdown({ targetDate }) {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
+
+  const handleRemindClick = () => {
+    setLoading(true);
+
+    const calendarEvent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY=Mosun Adventure Launch
+DESCRIPTION=Don’t forget to play Mosun! 🚀
+DTSTART:20250620T090000Z
+DTEND:20250620T093000Z
+LOCATION=Online
+END:VEVENT
+END:VCALENDAR
+    `.trim();
+
+    const blob = new Blob([calendarEvent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'mosun-reminder.ics';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); // brief pause to simulate processing
+  };
 
   return (
     <div className="countdown-container">
@@ -41,11 +71,27 @@ export default function Countdown({ targetDate }) {
       <div className="reminder-section">
         <p className="reminder-text">
           Ancient echoes rise, mystery calls from beyond.
-          <br />Power and legend converge, <br />
-          Ṣé o setán?
-          Destiny awaits 
+          <br />
+          Power and legend converge, <br />
+          Ṣé o setán? Destiny awaits
         </p>
-        <button className="remind-button"><FaBell className="bell-icon" /> REMIND ME</button>
+        <button
+          className="remind-button"
+          onClick={handleRemindClick}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <FaSpinner className="spin bell-icon" />
+              Loading...
+            </>
+          ) : (
+            <>
+              <FaBell className="bell-icon" />
+              REMIND ME
+            </>
+          )}
+        </button>
       </div>
     </div>
   );

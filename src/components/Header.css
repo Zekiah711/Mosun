@@ -1,16 +1,15 @@
 .header {
-  position: relative;
-  top: 0px;
-  left: 40px;
-  right: 40px;
+  width: 100%;
   max-width: 90%;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   font-weight: 500;
-  overflow: hidden;
 }
+
 
 .logo {
   width: 120px; /* or whatever size fits */
@@ -37,24 +36,25 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
+    padding: 10px 20px;
   }
 
   .logo {
-    width: 200px; /* Increased for mobile */
+    width: 160px;
     height: auto;
   }
 
   .nav-links {
-    display: none; /* Hide "Contact Us" */
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding: 10px 8px;
+  }
+
   .logo {
-    width: 150px;
+    width: 120px;
   }
 }
