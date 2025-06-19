@@ -26,16 +26,16 @@ export default function Countdown({ targetDate }) {
     setLoading(true);
 
     const calendarEvent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY=Mosun Adventure Launch
-DESCRIPTION=Don’t forget to play Mosun! 🚀
-DTSTART:20250620T090000Z
-DTEND:20250620T093000Z
-LOCATION=Online
-END:VEVENT
-END:VCALENDAR
+        BEGIN:VCALENDAR
+        VERSION:2.0
+        BEGIN:VEVENT
+        SUMMARY=Mosun Adventure Launch
+        DESCRIPTION=Don’t forget to play Mosun! 🚀
+        DTSTART:20250623T090000Z
+        DTEND:20250623T093000Z
+        LOCATION=Online
+        END:VEVENT
+        END:VCALENDAR
     `.trim();
 
     const blob = new Blob([calendarEvent], { type: 'text/calendar;charset=utf-8' });

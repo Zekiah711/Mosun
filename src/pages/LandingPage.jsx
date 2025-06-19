@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <Countdown targetDate={'2025-06-20T00:00:00'} />
+      <Countdown targetDate={'2025-06-23T00:00:00'} />
       <Footer />
     </>
   );

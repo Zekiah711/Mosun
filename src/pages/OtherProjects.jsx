@@ -1,6 +1,10 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
+import locusImage from '../assets/LOGO_2404STUDIOS_SOCIAL/locusimg.jpg';
+import MosunImage from '../assets/LOGO_2404STUDIOS_SOCIAL/mosun_logo.png';
+
+
 
 export default function OtherProjects() {
   return (
@@ -11,22 +15,27 @@ export default function OtherProjects() {
 
        <ProjectCard
           title="Mosun"
-          imageSrc="/images/lost-realms.jpg" // Replace with actual path
-          description="Embark on a journey through the forgotten lands, where ancient technology and myth collide. Will you survive the Lost Realms?"
-          
+          imageSrc={MosunImage}
+          description="Step into the world of Mosun, a myth-infused adventure where power, legacy, and the unknown collide. Guided by destiny,
+           you’ll navigate through enchanted realms and awaken long-lost legends. 
+           Will you answer the call?"
         />
 
-        <ProjectCard
+       <ProjectCard
           title="Locus"
-          imageSrc="/images/lost-realms.jpg" // Replace with actual path
-          description="Embark on a journey through the forgotten lands, where ancient technology and myth collide. Will you survive the Lost Realms?"
-          onClick={() => alert('Play Lost Realms!')}
-        />
+          imageSrc={locusImage}
+          description="Locus is a fast-paced 3D aerial shooter where you pilot a powerful plane through intense skies. Dodge incoming fire, engage enemies, 
+          and clear missions with precision. Pure adrenaline. 
+          Pure action. No excuses"
+          onClick={() => alert('Play Locus!')}
+       />
 
         <ProjectCard
-          title="Locus"
+          title="Eclipse Runner"
           imageSrc="/images/eclipse-runner.jpg" // Replace with actual path
-          description="Dash through shadowy dimensions and survive the eclipse in this fast-paced adventure."
+          description="Eclipse Runner throws you into a mysterious world cloaked in twilight. Fight your way through dangerous terrain, shadow beasts, 
+          and shifting dimensions in a gripping combat-filled adventure. 
+          Your speed and skill are your only hope."
           onClick={() => alert('Play Eclipse Runner!')}
         />
       </main>
