@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 import locusImage from '../assets/LOGO_2404STUDIOS_SOCIAL/locusimg.jpg';
 import MosunImage from '../assets/LOGO_2404STUDIOS_SOCIAL/mosun_logo.png';
-
+import PitImage from '../assets/LOGO_2404STUDIOS_SOCIAL/pitrushlogo.png';
 
 
 export default function OtherProjects() {
@@ -19,24 +19,28 @@ export default function OtherProjects() {
           description="Step into the world of Mosun, a myth-infused adventure where power, legacy, and the unknown collide. Guided by destiny,
            you’ll navigate through enchanted realms and awaken long-lost legends. 
            Will you answer the call?"
+          comingSoon={true}
         />
 
        <ProjectCard
-          title="Locus"
-          imageSrc={locusImage}
-          description="Locus is a fast-paced 3D aerial shooter where you pilot a powerful plane through intense skies. Dodge incoming fire, engage enemies, 
-          and clear missions with precision. Pure adrenaline. 
-          Pure action. No excuses"
-          onClick={() => alert('Play Locus!')}
+          title="Pit Rush"
+          imageSrc={PitImage}
+          description="Pit Rush is a fast-paced multiplayer capture-item experience that features a breathtaking Outer-World, 
+          Mars inspired environment.
+           Players are trapped in a massive pit, where they must race, fight, and outmaneuver one 
+           another to secure limited items to win. This is a free for all experience that
+           allows up to 16 players to play. The objective is simple— Capture all items,
+          survive the chaos, and be the one to escape."
+          playLink="https://www.fortnite.com/@aceblor/1806-4646-7042"
        />
 
         <ProjectCard
-          title="Eclipse Runner"
-          imageSrc="/images/eclipse-runner.jpg" // Replace with actual path
-          description="Eclipse Runner throws you into a mysterious world cloaked in twilight. Fight your way through dangerous terrain, shadow beasts, 
-          and shifting dimensions in a gripping combat-filled adventure. 
-          Your speed and skill are your only hope."
-          onClick={() => alert('Play Eclipse Runner!')}
+          title="Locus Shooter"
+          imageSrc={locusImage} // Replace with actual path
+          description="Locus is a fast-paced 3D aerial shooter where you pilot a powerful plane through intense skies. Dodge incoming fire, engage enemies, 
+          and clear missions with precision. Pure adrenaline. 
+          Pure action. No excuses"
+          comingSoon={true}
         />
       </main>
       <Footer linkLabel="Back to Homepage" linkHref="/" />

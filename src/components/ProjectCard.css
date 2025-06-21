@@ -50,6 +50,13 @@
   align-items: center;
 }
 
+.project-button:disabled {
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.1);
+  color: #aaa;
+}
+
+
 .project-button .play-icon {
   margin-right: 8px;
 }
